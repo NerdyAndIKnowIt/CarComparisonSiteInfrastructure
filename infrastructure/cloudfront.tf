@@ -23,6 +23,7 @@ resource "aws_cloudfront_distribution" "cloudfront" {
       domain_name = aws_s3_bucket.bucket.bucket_regional_domain_name
       origin_access_control_id = aws_cloudfront_origin_access_control.origin_access_control.id
       origin_id = aws_s3_bucket.bucket.bucket
+      origin_path = "/browser/comparison"
     }
 
     restrictions {
