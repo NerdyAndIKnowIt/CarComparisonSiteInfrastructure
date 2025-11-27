@@ -1,16 +1,16 @@
 resource "aws_dynamodb_table" "thatvsthis_table" {
   name         = "ThatVsThisTable"
   billing_mode = "PAY_PER_REQUEST"
-  hash_key     = "make"
-  range_key    = "model"
+  hash_key     = "Make"
+  range_key    = "Model"
 
   attribute {
-    name = "make"
+    name = "Make"
     type = "S"
   }
 
   attribute {
-    name = "model"
+    name = "Model"
     type = "S"
   }
 }
