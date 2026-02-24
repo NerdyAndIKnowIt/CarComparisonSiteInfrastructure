@@ -1,9 +1,10 @@
 resource "aws_lambda_function" "thatvsthis_lambda" {
   filename      = "LambdaPackage.zip"
+  source_code_hash = filebase64sha256("LambdaPackage.zip")
   function_name = "thatvsthis_lambda"
   role          = aws_iam_role.lambda_role.arn
-  handler       = "LambdaPythonPackage.LambdaHandler"
-  runtime       = "python3.11"
+  handler       = "LambdaPythonPackage.lambda_handler"
+  runtime       = "python3.13"
 }
 
 resource "aws_iam_role" "lambda_role" {
